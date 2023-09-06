@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +16,7 @@ public class Aluno {
     String  RG;
     String curso;
     String fase;
+    List<Boolean> frequenciaAluno =new ArrayList<>();
 
     public void imprimirdadosAluno() {
         System.out.println( "código: " + codigo + "\n" + " Nome : " + nome + "\n"+ " Data de Nascimento: "+ DataNascimento );
@@ -37,7 +39,7 @@ public class Aluno {
         }
     }
 
-    public void calcularMedioGeral() {
+    public Integer calcularMedioGeral() {
 
        Integer mediaGeral = 0;
         for (Map.Entry<String, List<Integer>> entry : disciplinasNotas.entrySet()) {
@@ -52,8 +54,25 @@ public class Aluno {
             mediaGeral += ( somaNotas / notas.size() );
 
             }
-        System.out.println( " A média Geral é : " + mediaGeral/ disciplinasNotas.size() );
+        return  ( mediaGeral/ disciplinasNotas.size() );
         }
+
+
+   public Integer calcularFrequencia ( ) {
+
+       Integer presenca = 0;
+               Integer faltas = 0;
+
+                for(Boolean freq : this.frequenciaAluno) {
+                    if (freq == true) {
+                        presenca++;
+                    }
+                }
+                return ( presenca * 100 ) / frequenciaAluno.size() ;
+
+   }
+
+
     }
 
 
