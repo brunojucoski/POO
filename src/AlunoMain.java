@@ -7,25 +7,64 @@ import java.util.Map;
 
 public class AlunoMain {
     public static void main(String[] args) {
+
+
         Aluno aluno01 = new Aluno();
         Map< String, List<Integer>> disciplinas = new HashMap<>();
         List<Integer> notasMatematica = new ArrayList<>();
         List<Integer> notasPortugues = new ArrayList<>();
-        List<Boolean> frequenciaAluno = new ArrayList<>();
 
-        frequenciaAluno.add(true);
-        frequenciaAluno.add(true);
-        frequenciaAluno.add(true);
-        frequenciaAluno.add(true);
-        frequenciaAluno.add(true);
-        frequenciaAluno.add(false);
+
+
+        Filiacao filiacao1 = new Filiacao();
+        filiacao1.nomeMae = "Maria" ;
+        filiacao1.nomePai = "Joao" ;
+
+        aluno01.filiacao = filiacao1;
+
+
+
+
+        Bolsa bolsa = new Bolsa();
+        bolsa.descricao = "PMC" ;
+        bolsa.dataInicial = LocalDate.of(2023, 8, 22);
+        bolsa.dataFinal = LocalDate.of(2023, 12, 25);
+
+        aluno01.bolsa = bolsa;
+
+
+
+        Frequencia freq1 = new Frequencia();
+        freq1.dataAula = LocalDate.of(2023, 2, 30);
+        freq1.presenca = true;
+
+        Frequencia freq2 = new Frequencia();
+        freq2.dataAula = LocalDate.of(2023, 9, 22);
+        freq2.presenca = false;
+
+        Frequencia freq3 = new Frequencia();
+        freq3.dataAula = LocalDate.of(2023, 9, 23);
+        freq3.presenca = true;
+
+        Frequencia freq4 = new Frequencia();
+        freq4.dataAula = LocalDate.of(2023, 9, 24);
+        freq4.presenca = true;
+
+        aluno01.frequencias.add(freq1);
+        aluno01.frequencias.add(freq2);
+        aluno01.frequencias.add(freq3);
+        aluno01.frequencias.add(freq4);
+
+
+
 
         aluno01.codigo = 123456789;
         aluno01.nome = "Jaspion";
         aluno01.DataNascimento = LocalDate.of(1997, 10, 20);
         aluno01.endereco = "Rua Otavio Antonio Vicente, 530" ;
         aluno01.telefone = "48 996217914";
-        aluno01.frequenciaAluno = frequenciaAluno;
+
+
 
         notasMatematica.add(10);
         notasMatematica.add(8);

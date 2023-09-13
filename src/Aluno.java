@@ -15,8 +15,10 @@ public class Aluno {
     String CPF;
     String  RG;
     String curso;
-    String fase;
-    List<Boolean> frequenciaAluno =new ArrayList<>();
+    Filiacao filiacao;
+    Bolsa bolsa;
+    List<Frequencia> frequencias = new ArrayList<>();
+
 
     public void imprimirdadosAluno() {
         System.out.println( "código: " + codigo + "\n" + " Nome : " + nome + "\n"+ " Data de Nascimento: "+ DataNascimento );
@@ -58,19 +60,20 @@ public class Aluno {
         }
 
 
-   public Integer calcularFrequencia ( ) {
 
-       Integer presenca = 0;
-               Integer faltas = 0;
+    public Integer calcularFrequencia ( ) {
 
-                for(Boolean freq : this.frequenciaAluno) {
-                    if (freq == true) {
-                        presenca++;
-                    }
-                }
-                return ( presenca * 100 ) / frequenciaAluno.size() ;
+        Integer presenca = 0;
+        Integer faltas = 0;
 
-   }
+        for(Frequencia freq : this.frequencias) {
+            if (freq.presenca == true) {
+                presenca++;
+            }
+        }
+        return ( presenca * 100 ) / frequencias.size() ;
+
+    }
 
 
     }
