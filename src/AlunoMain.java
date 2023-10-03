@@ -23,8 +23,6 @@ public class AlunoMain {
         aluno01.filiacao = filiacao1;
 
 
-
-
         Bolsa bolsa = new Bolsa();
         bolsa.descricao = "PMC" ;
         bolsa.dataInicial = LocalDate.of(2023, 8, 22);
@@ -86,6 +84,22 @@ public class AlunoMain {
                 Aprovadoounao(aluno01.nome , mediaGeralAluno, aluno01.calcularFrequencia() );
 
         System.out.println(MensagemAprovacao);
+
+
+        Professor professor1 = new Professor ("Cris Vieira", "1654978" , "48996217955" ) ;
+        Professor professor2 = new Professor ( " Edilson son " , " 5465798" , "48999555487", " rua tal");
+
+        System.out.println(professor1);
+
+      //  professor1.nome = "Max master" ;
+      //  professor1.matricula = "123456" ;
+      //  professor1.dataContratacao = LocalDate.of(2023, 08 , 25) ;
+        System.out.println(professor1);
+
+
+
+
+
 
 
 
