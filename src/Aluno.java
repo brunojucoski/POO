@@ -3,27 +3,29 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Aluno {
-    Integer codigo;
-    String nome;
-    LocalDate DataNascimento;
-    String telefone;
-    String endereco;
-    Map<String, List<Integer>> disciplinasNotas;
-    String matricula;
-    Character sexo ;
-    String CPF;
-    String  RG;
-    String curso;
-    Filiacao filiacao;
-    Bolsa bolsa;
-    List<Frequencia> frequencias = new ArrayList<>();
+public class Aluno extends Pessoa {
+
+
+
+    private String telefone;
+    private String endereco;
+    private Map<String, List<Integer>> disciplinasNotas;
+    private Filiacao filiacao;
+    private Bolsa bolsa;
+    private List<Frequencia> frequencias = new ArrayList<>();
+
+
+
+
+
 
 
     public void imprimirdadosAluno() {
-        System.out.println( "código: " + codigo + "\n" + " Nome : " + nome + "\n"+ " Data de Nascimento: "+ DataNascimento );
+        System.out.println( "código: " + super.getCodigo() + "\n" + " Nome : " + super.getNome() + "\n"+ " Data de Nascimento: "+ super.getDataNascimento() );
 
     }
+
+
 
     public void calcularMediaPorMateria() {
         for (Map.Entry<String, List<Integer>> entry : disciplinasNotas.entrySet()) {
@@ -76,6 +78,68 @@ public class Aluno {
     }
 
 
+
+    //getters and setters
+
+    public String getTelefone() {
+        return telefone;
     }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public String getEndereco() {
+        return endereco;
+    }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
+
+    public Map<String, List<Integer>> getDisciplinasNotas() {
+        return disciplinasNotas;
+    }
+
+    public void setDisciplinasNotas(Map<String, List<Integer>> disciplinasNotas) {
+        this.disciplinasNotas = disciplinasNotas;
+    }
+
+    public Filiacao getFiliacao() {
+        return filiacao;
+    }
+
+    public void setFiliacao(Filiacao filiacao) {
+        this.filiacao = filiacao;
+    }
+
+    public Bolsa getBolsa() {
+        return bolsa;
+    }
+
+    public void setBolsa(Bolsa bolsa) {
+        this.bolsa = bolsa;
+    }
+
+    public List<Frequencia> getFrequencias() {
+        return frequencias;
+    }
+
+    public void setFrequencias(List<Frequencia> frequencias) {
+        this.frequencias = frequencias;
+    }
+
+    @Override
+    public String toString() {
+        return "Aluno{" +
+                "telefone='" + telefone + '\'' +
+                ", endereco='" + endereco + '\'' +
+                ", disciplinasNotas=" + disciplinasNotas +
+                ", filiacao=" + filiacao +
+                ", bolsa=" + bolsa +
+                ", frequencias=" + frequencias +
+                '}';
+    }
+}
 
 

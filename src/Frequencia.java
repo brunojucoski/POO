@@ -14,6 +14,22 @@ public class Frequencia {
                         ", dataAula=" + dataAula +
                         '}';
         }
+
+        public Boolean getPresenca() {
+                return presenca;
+        }
+
+        public void setPresenca(Boolean presenca) {
+                this.presenca = presenca;
+        }
+
+        public LocalDate getDataAula() {
+                return dataAula;
+        }
+
+        public void setDataAula(LocalDate dataAula) {
+                this.dataAula = dataAula;
+        }
 }
 
 
