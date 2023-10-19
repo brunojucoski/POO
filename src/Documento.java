@@ -1,6 +1,6 @@
 import java.time.LocalDate;
 
-public class documento {
+public class Documento {
     private String foto;
     private String nome;
     private Integer codigo;

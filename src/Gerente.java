@@ -37,6 +37,13 @@ public class Gerente extends  Funcionario{
         this.fatorMultiplicador = fatorMultiplicador;
     }
 
+
+
+    @Override
+    public Double getSalario() {
+        return ( (salarioContratual + bonusVendasDepartamento + salarioFamilia) * (100+fatorMultiplicador/100) ) ;
+    }
+
     @Override
     public String toString() {
         return "Gerente{" +

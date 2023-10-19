@@ -38,6 +38,11 @@ public class Diretor extends Funcionario{
     }
 
     @Override
+    public Double getSalario() {
+        return(salarioContratual + comissao + bonusFaturamento + salarioFamilia );
+    }
+
+    @Override
     public String toString() {
         return "Diretor{" +
                 "salarioContratual=" + salarioContratual +
